@@ -3,27 +3,31 @@ package net.java_crud.backend.mapper;
 import net.java_crud.backend.dto.EmployeeDto;
 import net.java_crud.backend.entity.Employee;
 
-public class EmployeeMapper {
+public final class EmployeeMapper { // Final to prevent instantiation
+
+    private EmployeeMapper() {
+        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
+    }
 
     public static EmployeeDto mapToEmployeeDto(Employee emp) {
         return new EmployeeDto(
                 emp.getId(),
-                emp.getFirstname(),
-                emp.getLastname(),
+                emp.getFirstName(),  // Corrected naming
+                emp.getLastName(),   // Corrected naming
                 emp.getAge(),
                 emp.getEmail(),
-                emp.getJoinDate()        // Ensure 'date' exists in Employee entity
+                emp.getJoinDate()
         );
     }
 
     public static Employee mapToEmployee(EmployeeDto empDto) {
         return new Employee(
                 empDto.getId(),
-                empDto.getFirstname(),
-                empDto.getLastname(),
+                empDto.getFirstName(),  // Corrected naming
+                empDto.getLastName(),   // Corrected naming
                 empDto.getAge(),
                 empDto.getEmail(),
-                empDto.getJoinDate()     // Ensure 'date' exists in EmployeeDto
+                empDto.getJoinDate()
         );
     }
 }
