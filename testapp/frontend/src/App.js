@@ -2,6 +2,7 @@ import EmployeeList from "./components/EmployeeList";
 import EventBind from "./components/EventBind";
 import Example from "./components/Example";
 import Message from "./components/Message";
+import NavBar from "./components/NavBar";
 import React from "react";
 import Test from "./components/Test";
 
@@ -20,6 +21,7 @@ const App = () => {
       {/* <Message /> */}
       {/* <EventBind/> */}
       {/* <Example/> */}
+      {/* <NavBar/> */}
     </div>
     
   );
